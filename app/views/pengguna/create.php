@@ -223,23 +223,23 @@
                 <form action="<?= ROUTE_URL; ?>/pengguna/create" method="post">
                     <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
                         <label class="block text-sm">
+                            <span class="text-gray-700 dark:text-gray-400">Nama Pengguna</span>
+                            <input type="text" name="NamaPengguna" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane" />
+                        </label>
+
+                        <label class=" block mt-4 text-sm">
+                            <span class="text-gray-700 dark:text-gray-400"> Password </span>
+                            <input type="password" name="Password" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="password" />
+                        </label>
+
+                        <label class="block text-sm">
                             <span class="text-gray-700 dark:text-gray-400">Nama Depan</span>
                             <input type="text" name="NamaDepan" id="NamaDepan" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane" />
                         </label>
 
                         <label class="block mt-4 text-sm">
                             <span class="text-gray-700 dark:text-gray-400">Nama Belakang</span>
-                            <input type="text" name="NamaBelakang" id="NamaDepan" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Doe" />
-                        </label>
-
-                        <label class="block mt-4 text-sm">
-                            <span class="text-gray-700 dark:text-gray-400">Username</span>
-                            <input type="text" name="NamaPengguna" id="NamaPengguna" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="JaneDone" />
-                        </label>
-
-                        <label class=" block mt-4 text-sm">
-                            <span class="text-gray-700 dark:text-gray-400"> Alamat </span>
-                            <input type="text" name="Alamat" id="Alamat" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Los Angeles" />
+                            <input type="text" name="NamaBelakang" id="NamaBelakang" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Doe" />
                         </label>
 
                         <label class=" block mt-4 text-sm">
@@ -248,15 +248,15 @@
                         </label>
 
                         <label class=" block mt-4 text-sm">
-                            <span class="text-gray-700 dark:text-gray-400"> Password </span>
-                            <input type="password" name="Password" id="Password" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="password" />
+                            <span class="text-gray-700 dark:text-gray-400"> Alamat </span>
+                            <input type="text" name="Alamat" id="Alamat" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Los Angeles" />
                         </label>
 
                         <label class="block mt-4 text-sm">
                             <span class="text-gray-700 dark:text-gray-400">
                                 Hak Akses
                             </span>
-                            <select class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                            <select name="IdAkses" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                 <option value=1>Admin</option>
                                 <option value=2>Owner</option>
                                 <option value=3>Pembeli</option>

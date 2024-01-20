@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 class Pengguna extends Controller
 {
     public function index()
@@ -24,13 +24,15 @@ class Pengguna extends Controller
 
     public function create()
     {
-        if ($this->model('user_model')->tambahDataPengguna($_POST) > 0) {
-            header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna berhasil ditambahkan maka diarahkan ke halaman pengguna
-            exit;
-        }
         $data['judul'] = 'Tambah Pengguna';
+
         $this->view('templates/header', $data);
         $this->view('pengguna/create');
         $this->view('templates/footer');
+
+        if ($this->model('pengguna_model')->tambahDataPengguna($_POST) > 0) {
+            header('Location: http://localhost/Toko/public/pengguna'); // apabila pengguna berhasil ditambahkan maka diarahkan ke halaman pengguna
+            exit;
+        }
     }
 }
