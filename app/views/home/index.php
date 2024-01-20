@@ -34,6 +34,14 @@
           </a>
         </li>
         <li class="relative px-6 py-3">
+          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="<?= ROUTE_URL ?>/role">
+            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+            </svg>
+            <span class="ml-4">Hak Akses</span>
+          </a>
+        </li>
+        <li class="relative px-6 py-3">
           <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="charts.html">
             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
@@ -102,6 +110,14 @@
               <path d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
             </svg>
             <span class="ml-4">Penguna</span>
+          </a>
+        </li>
+        <li class="relative px-6 py-3">
+          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="<?= ROUTE_URL ?>/role">
+            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+            </svg>
+            <span class="ml-4">Hak Akses</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
@@ -224,7 +240,7 @@
         </h2>
 
         <div class="grid grid-cols-4 gap-4">
-          <?php foreach($data["analytic"] as $analytic): ?>
+          <?php foreach ($data["analytic"] as $analytic) : ?>
             <div class="p-4 text-white w-20 bg-white w-full rounded-lg shadow-xs dark:bg-gray-800">
               <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
                 <?= $analytic['NamaBarang'] ?>
@@ -235,9 +251,9 @@
               <p class="text-xs mt-2">Total Pembelian</p>
               <p class="text-xs mt-1 text-red-500">- Rp<?= number_format($analytic['TotalPembelian'], 0, ',', '.') ?></p>
 
-              <?php if ($analytic["Status"] == "Untung"): ?>
+              <?php if ($analytic["Status"] == "Untung") : ?>
                 <p class="text-sm text-center p-2 bg mt-8 font-semibold text-green-500 border border-green-300 rounded-full bg-green-100/10 text-xs"><?= $analytic["Status"] ?></span></p>
-              <?php else: ?>
+              <?php else : ?>
                 <p class="text-sm text-center p-2 bg mt-8 font-semibold text-red-500 border border-red-300 rounded-full bg-red-100/10 text-xs"><?= $analytic["Status"] ?></span></p>
               <?php endif; ?>
             </div>
