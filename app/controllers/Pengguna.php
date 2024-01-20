@@ -32,6 +32,19 @@ class Pengguna extends Controller
         $this->view('templates/footer');
     }
 
+    public function edit_submit()
+    {
+        if ($this->model('pengguna_model')->updateDataPengguna($_POST) > 0) {
+            Flasher::flash('Berhasil', 'ditambahkan');
+            header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna berhasil ditambahkan
+            exit;
+        } else {
+            Flasher::flash('Gagal', 'ditambahkan');
+            header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna gagal ditambahkan 
+            exit;
+        }
+    }
+
     public function create()
     {
         $data['judul'] = 'Tambah Pengguna';
@@ -51,9 +64,9 @@ class Pengguna extends Controller
         }
     }
 
-    public function hapus($id)
+    public function hapus($IdPengguna)
     {
-        if ($this->model('pengguna_model')->hapusDataPengguna($id) > 0) {
+        if ($this->model('pengguna_model')->hapusDataPengguna($IdPengguna) > 0) {
             Flasher::flash('Berhasil', 'dihapus');
             header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna berhasil dihapus
             exit;

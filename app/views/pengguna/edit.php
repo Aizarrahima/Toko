@@ -219,64 +219,64 @@
           Edit Page
         </h2>
 
-
         <!-- General elements -->
-        <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-          <label class="block text-sm">
-            <span class="text-gray-700 dark:text-gray-400">Nama Depan</span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NamaDepan']; ?>" />
-          </label>
+        <form action=" <?= ROUTE_URL; ?>/pengguna/edit_submit" method="post">
+          <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <label class="block text-sm">
+              <span class="text-gray-700 dark:text-gray-400">Nama Depan</span>
+              <input name="NamaDepan" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NamaDepan']; ?>" />
+            </label>
 
-          <label class="block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400">Nama Belakang</span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NamaBelakang']; ?>" />
-          </label>
+            <label class="block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400">Nama Belakang</span>
+              <input name="NamaBelakang" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NamaBelakang']; ?>" />
+            </label>
 
-          <label class="block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400">Username</span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NamaPengguna']; ?>" />
-          </label>
+            <label class="block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400">Username</span>
+              <input name="NamaPengguna" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NamaPengguna']; ?>" />
+            </label>
 
-          <label class=" block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400"> Alamat </span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['Alamat']; ?>" />
-          </label>
+            <label class=" block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400"> Alamat </span>
+              <input name="Alamat" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['Alamat']; ?>" />
+            </label>
 
-          <label class=" block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400">Nomor HP</span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NoHP']; ?>" />
-          </label>
+            <label class=" block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400">Nomor HP</span>
+              <input name="NoHP" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['NoHP']; ?>" />
+            </label>
 
-          <label class=" block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400"> Password </span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['Password']; ?>" />
-          </label>
+            <label class=" block mt-4 text-sm hidden">
+              <span class="text-gray-700 dark:text-gray-400"> Password </span>
+              <input name="Password" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['Password']; ?>" />
+            </label>
 
-          <label class=" block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400"> Id Pengguna </span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['IdPengguna']; ?>" />
-          </label>
+            <label class=" block mt-4 text-sm hidden">
+              <span class="text-gray-700 dark:text-gray-400"> Id Pengguna </span>
+              <input name="IdPengguna" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['IdPengguna']; ?>" />
+            </label>
 
-          <label class=" block mt-4 text-sm">
-            <span class="text-gray-700 dark:text-gray-400"> Id Akses </span>
-            <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['IdAkses']; ?>" />
-          </label>
-
-          <!-- Button -->
-          <div class="flex">
-            <div class=" pl-4 my-6">
-              <a href="<?= ROUTE_URL ?>/pengguna" class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 border rounded-lg dark:border-gray-600 dark:bg-gray-400 bg-gray-400 active:bg-gray-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray">
-                Back
-              </a>
+            <label class=" block mt-4 text-sm hidden">
+              <span class="text-gray-700 dark:text-gray-400"> Id Akses </span>
+              <input name="IdAkses" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="<?= $data['pengguna']['IdAkses']; ?>" />
+            </label>
+            <!-- Button -->
+            <div class="flex">
+              <div class=" pl-4 my-6">
+                <a href="<?= ROUTE_URL ?>/pengguna" class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 border rounded-lg dark:border-gray-600 dark:bg-gray-400 bg-gray-400 active:bg-gray-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray">
+                  Back
+                </a>
+              </div>
+              <div class=" px-6 my-6">
+                <button type="submit" class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                  Edit
+                </button>
+              </div>
             </div>
-            <div class=" px-6 my-6">
-              <button class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-                Edit
-              </button>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
-    </main>
   </div>
+  </main>
+</div>
 </div>
