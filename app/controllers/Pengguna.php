@@ -48,9 +48,10 @@ class Pengguna extends Controller
     public function create()
     {
         $data['judul'] = 'Tambah Pengguna';
+        $data['role'] = $this->model('role_model')->getAllRole();
 
         $this->view('templates/header', $data);
-        $this->view('pengguna/create');
+        $this->view('pengguna/create', $data);
         $this->view('templates/footer');
 
         if ($this->model('pengguna_model')->tambahDataPengguna($_POST) > 0) {
