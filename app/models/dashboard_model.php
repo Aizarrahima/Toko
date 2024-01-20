@@ -14,7 +14,7 @@ class dashboard_model {
                 Barang.NamaBarang,
                 TotalPenjualan, 
                 TotalPembelian, 
-                TotalPenjualan - TotalPembelian AS Laba, 
+                TotalPenjualan - TotalPembelian AS Selisih, 
                 CASE
                     WHEN TotalPenjualan - TotalPembelian > 0 THEN 'Untung'
                     WHEN TotalPenjualan - TotalPembelian < 0 THEN 'Rugi'
@@ -58,7 +58,7 @@ class dashboard_model {
         for ($i = 0; $i < count($result); $i++) {
             for ($j = 2; $j <= count($result); $j++) {
                 if ($i + $j > count($result)) continue;
-                
+
                 $products = array_slice($result, $i, $j);
                 $profit = array_sum(
                     array_map(function($product) { return $product["Keuntungan"]; }, $products)

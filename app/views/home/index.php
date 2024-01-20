@@ -236,9 +236,9 @@
               <p class="text-xs mt-1 text-red-500">- Rp<?= number_format($analytic['TotalPembelian'], 0, ',', '.') ?></p>
 
               <?php if ($analytic["Status"] == "Untung"): ?>
-                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-green-500 border border-green-300 rounded-full bg-green-100/10 text-xs"><?= $analytic["Status"] ?></span></p>
+                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-green-500 border border-green-300 rounded-full bg-green-100/10 text-xs"><?= $analytic["Status"] . " Rp" . number_format($analytic['Selisih'], 0, ',', '.')  ?></span></p>
               <?php else: ?>
-                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-red-500 border border-red-300 rounded-full bg-red-100/10 text-xs"><?= $analytic["Status"] ?></span></p>
+                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-red-500 border border-red-300 rounded-full bg-red-100/10 text-xs"><?= $analytic["Status"] . " Rp" . number_format(abs($analytic['Selisih']), 0, ',', '.') ?></span></p>
               <?php endif; ?>
             </div>
           <?php endforeach; ?>
