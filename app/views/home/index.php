@@ -245,6 +245,32 @@
         </div>
 
         <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+          Kombinasi Paket Penjualan Barang
+        </h2>
+
+        <div class="grid grid-cols-4 gap-4">
+          <?php foreach($data["kombinasi"] as $combination): ?>
+            <div class="p-4 text-white w-20 bg-white w-full rounded-lg shadow-xs dark:bg-gray-800">
+              <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                <?php 
+                  $productNames = array_map(
+                    function($product) {
+                      return $product["NamaBarang"];
+                    }, 
+                    $combination["products"]
+                  );
+                  $productNames = implode(", ", $productNames);
+                ?>
+
+                <?= $productNames ?>
+              </h4>
+              <p class="text-xs">Total Keuntungan</p>
+              <p class="text-xs mt-1 text-green-500">+ Rp<?= number_format($combination['profit'], 0, ',', '.') ?></p>
+            </div>
+          <?php endforeach; ?>
+        </div>
+
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
           Charts
         </h2>
         <div class="grid gap-6 mb-8 md:grid-cols-2">
