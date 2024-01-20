@@ -26,7 +26,6 @@ class pengguna_model
 
     public function tambahDataPengguna($data)
     {
-        // var_dump($data);
         $query = "INSERT INTO Pengguna VALUES (0, :NamaPengguna, :Password, :NamaDepan, :NamaBelakang, :NoHP, :Alamat, :IdAkses) ";
 
         $this->db->query($query);
@@ -38,6 +37,17 @@ class pengguna_model
         $this->db->bind('NoHP', $data['NoHP']);
         $this->db->bind('Alamat', $data['Alamat']);
         $this->db->bind('IdAkses', $data['IdAkses']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function hapusDataPengguna($IdPengguna)
+    {
+        $query = "DELETE FROM Pengguna WHERE IdPengguna = :IdPengguna";
+        $this->db->query($query);
+        $this->db->bind('IdPengguna', $IdPengguna);
 
         $this->db->execute();
 
