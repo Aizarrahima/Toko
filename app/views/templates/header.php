@@ -14,6 +14,7 @@
     <script src="<?= BASEURL; ?>/js/charts-lines.js" defer></script>
     <script src="<?= BASEURL; ?>/js/charts-pie.js" defer></script>
     <script src="<?= BASEURL; ?>/js/focus-trap.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
