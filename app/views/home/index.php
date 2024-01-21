@@ -235,11 +235,38 @@
               <p class="text-xs mt-2">Total Pembelian</p>
               <p class="text-xs mt-1 text-red-500">- Rp<?= number_format($analytic['TotalPembelian'], 0, ',', '.') ?></p>
 
-              <?php if ($analytic["Status"] == "Untung") : ?>
-                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-green-500 border border-green-300 rounded-full bg-green-100/10 text-xs"><?= $analytic["Status"] ?></span></p>
-              <?php else : ?>
-                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-red-500 border border-red-300 rounded-full bg-red-100/10 text-xs"><?= $analytic["Status"] ?></span></p>
+              <?php if ($analytic["Status"] == "Untung"): ?>
+                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-green-500 border border-green-300 rounded-full bg-green-100/10 text-xs"><?= $analytic["Status"] . " Rp" . number_format($analytic['Selisih'], 0, ',', '.')  ?></span></p>
+              <?php else: ?>
+                <p class="text-sm text-center p-2 bg mt-8 font-semibold text-red-500 border border-red-300 rounded-full bg-red-100/10 text-xs"><?= $analytic["Status"] . " Rp" . number_format(abs($analytic['Selisih']), 0, ',', '.') ?></span></p>
+
               <?php endif; ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+          Kombinasi Paket Penjualan Barang
+        </h2>
+
+        <div class="grid grid-cols-4 gap-4">
+          <?php foreach($data["kombinasi"] as $combination): ?>
+            <div class="p-4 text-white w-20 bg-white w-full rounded-lg shadow-xs dark:bg-gray-800">
+              <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                <?php 
+                  $productNames = array_map(
+                    function($product) {
+                      return $product["NamaBarang"];
+                    }, 
+                    $combination["products"]
+                  );
+                  $productNames = implode(", ", $productNames);
+                ?>
+
+                <?= $productNames ?>
+              </h4>
+              <p class="text-xs">Total Keuntungan</p>
+              <p class="text-xs mt-1 text-green-500">+ Rp<?= number_format($combination['profit'], 0, ',', '.') ?></p>
             </div>
           <?php endforeach; ?>
         </div>
