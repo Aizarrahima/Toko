@@ -35,12 +35,12 @@ class Pengguna extends Controller
     public function edit_submit()
     {
         if ($this->model('pengguna_model')->updateDataPengguna($_POST) > 0) {
-            Flasher::flash('Berhasil', 'ditambahkan');
-            header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna berhasil ditambahkan
+            Flasher::flash('Berhasil', 'diubah');
+            header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna berhasil diupdate
             exit;
         } else {
-            Flasher::flash('Gagal', 'ditambahkan');
-            header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna gagal ditambahkan 
+            Flasher::flash('Gagal', 'diubah');
+            header('Location: ' . ROUTE_URL . '/pengguna'); // apabila pengguna gagal diupdate 
             exit;
         }
     }
@@ -48,9 +48,10 @@ class Pengguna extends Controller
     public function create()
     {
         $data['judul'] = 'Tambah Pengguna';
+        $data['role'] = $this->model('role_model')->getAllRole();
 
         $this->view('templates/header', $data);
-        $this->view('pengguna/create');
+        $this->view('pengguna/create', $data);
         $this->view('templates/footer');
 
         if ($this->model('pengguna_model')->tambahDataPengguna($_POST) > 0) {
